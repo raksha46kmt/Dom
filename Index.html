@@ -28,7 +28,7 @@ xmlhttp = new XMLHttpRequest();
 xmlhttp.open("GET", "index.xml", false);
 xmlhttp.send();
 xmlDoc = xmlhttp.responseXML;
-x = xmlDoc.getElementsByTagName("Events");
+x = xmlDoc.getElementsByTagName("book");
 table="<tr><th>Different Types of Events</th><th>SPECIAL price</th></tr>";
 for (i = 0; i <x.length; i++) {
   table += "<tr onclick='displaybook(" + i + ")'><td>";
@@ -40,7 +40,7 @@ for (i = 0; i <x.length; i++) {
 document.getElementById("demo").innerHTML = table;
 
 function displaybook(i) {
-  document.getElementById("book").innerHTML =
+  document.getElementById("showbook").innerHTML =
   "NAME: " +
   x[i].getElementsByTagName("Events")[0].childNodes[0].nodeValue +
   "<br>Events: " +
